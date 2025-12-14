@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(
+    135deg,
+    #4B3A73,
+    #5B6AA6
+  );
+  min-height: 100vh;
+
+}
+
+.container {
+  padding: 30px;
+}
+
+
+/* Headings */
+h1, h2, h3 {
+  text-align: center;
+  color: #f4f3f6;
+}
+
+/* Home grid: 3 per row */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,59 @@
+.navbar {
+  background-color: #270f5e;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+
+
+}
+
+.navbar h2 {
+  color: #e3edeb;
+  margin: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #d6dbd9;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.logout-btn {
+  background-color: #dbe0e1;
+  color: #4B3A73;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nav-search {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.nav-search input,
+.nav-search select {
+  padding: 7px 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+}

@@ -1,0 +1,181 @@
+.admin-container {
+  background-color: #d9dfde;
+  width: 90%;
+  max-width: 950px;
+  margin: 40px auto;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.3);
+}
+
+.admin-container h2,
+.admin-container h3 {
+  color: #4B3A73;
+}
+
+/* Form */
+.admin-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.admin-form input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Table */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+.admin-table th,
+.admin-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.admin-table th {
+  background-color: #5B6AA6;
+  color: white;
+}
+
+/* Action buttons */
+.icon-btn, .Restock, .in, .add-btn, .name {
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  margin-left: 16px;
+}
+
+.add-btn{
+      background-color: #f1f2f9;
+      border: 1px solid;
+
+}
+.name{
+    text-align: center;
+      background-color: #e8e9eb;
+
+}
+.in{
+    margin-right: 30px;
+    text-align: center;
+    height: 25px;
+}
+
+.in {
+  width: 120px;          /* 🔒 fixed width */
+  min-width: 120px;
+  max-width: 120px;
+
+  height: 32px;
+  text-align: center;
+
+  border-radius: 8px;
+  border: none;
+
+  margin-right: 16px;
+  font-weight: 600;
+}
+
+
+.Restock{
+    margin-right: 15px;
+    height: 35px;
+}
+
+.edit-btn {
+  background-color: #4b3a73;
+  color: #e5e3ea;
+}
+
+.delete-btn {
+  background-color: #4B3A73;
+  color: #e5e3ea;
+}
+
+.edit-btn:hover {
+  background-color: #7656c7;
+}
+
+.delete-btn:hover {
+  background-color: #7656c7;
+}
+
+.admin-table td input:not(.in) {
+  width: 90%;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #b7b7b7;
+  text-align: center;
+  font-size: 14px;
+}
+
+.action-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+}
+
+.Restock {
+  padding: 6px 14px;
+}
+
+.icon-btn {
+  padding: 6px 14px;
+}
+
+.add-toggle-btn {
+  background-color: #4B3A73;
+  color: #e5e3ea;
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 10px auto 20px;
+  display: block;
+}
+
+.add-toggle-btn:hover {
+  background-color: #7656c7;
+}
+
+/* Slide down animation */
+.slide-down {
+  animation: slideDown 0.35s ease-out forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.add-toggle-btn:disabled {
+  background-color: #9a93b2;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+button:disabled,
+input:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
