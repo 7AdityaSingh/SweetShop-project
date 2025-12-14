@@ -186,41 +186,31 @@ Password: admin@123
 These credentials are for testing and demonstration purposes only.
 
 
-Authentication & Authorization
+# Authentication & Authorization
 
 JWT-based authentication is implemented
-
 Two roles are supported:
-
 User – can browse and purchase sweets
-
 Admin – can manage sweets and inventory
-
 Protected routes prevent unauthorized access
-
 Admin-only routes enforce role-based authorization
 
+---
 
 # My AI Usage
 
 I used AI tools as part of my development workflow to improve efficiency, reduce repetitive work, and enhance code quality, while ensuring that I retained full responsibility for the final implementation and design decisions.
 
 AI Tools Used
-
 ChatGPT – Used for understanding concepts, generating initial boilerplate code, debugging issues, and refining UI/UX and workflow ideas.
 
-How I Used AI
+## How I Used AI
 
 I used ChatGPT to generate initial boilerplate code for React components, Express routes, and configuration files, which helped speed up the project setup.
-
 I used AI assistance to debug React state management and routing issues, especially while integrating global search and category filtering across multiple pages.
-
 I consulted AI for improving UI/UX patterns, such as navbar behavior, admin dashboard interactions, form animations, and role-based navigation.
-
 I used AI guidance to refine admin workflows, including controlled edit states, disabling conflicting actions during editing, and improving overall usability.
-
 I also used AI to help understand and resolve Git-related issues such as repository structure, .gitignore configuration, commit practices, and AI co-authorship requirements.
-
 All AI-generated suggestions were carefully reviewed, modified, and manually integrated. I did not directly copy large blocks of code without understanding them, and every feature was implemented with full awareness of how it works.
 
 Impact on My Workflow
@@ -231,20 +221,4 @@ AI usage throughout the project is transparently documented in the Git commit hi
 
 
 
-# Screenshots
 
-![Login Page](screenshots/login.png)
-
-![Register Page](screenshots/register.png)
-
-![Home Page](screenshots/home.png)
-
-![Search and Filter](screenshots/search.png)
-
-![Purchase and Out of Stock](screenshots/purchase.png)
-
-![Admin Dashboard](screenshots/admin-panel.png)
-
-![Add Sweet](screenshots/add-sweet.png)
-
-![Edit And Restock Sweet](screenshots/edit.png)
