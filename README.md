@@ -145,14 +145,19 @@ shop-project/
 │       └── package-lock.json
 └── .gitignore
 
- Getting Started
-Prerequisites
+ ---
 
-Node.js (v16 or higher)
+##  Getting Started
 
-npm
+### Prerequisites
+- Node.js (v16 or higher)
+- npm
 
-## Backend Setup
+---
+
+### Backend Setup
+
+```bash
 cd backend
 npm install
 node server.js
@@ -161,11 +166,10 @@ node server.js
 Backend runs on:
 http://localhost:5000
 
- ## Frontend Setup
+
 cd frontend/sweet-shop-ui
 npm install
 npm start
-
 
 Frontend runs on:
 http://localhost:3000
@@ -182,9 +186,9 @@ Password: admin@123
 These credentials are for testing and demonstration purposes only.
 
 
-# Authentication & Authorization
+🔑 Authentication & Authorization
 
-JWT-based authentication is used
+JWT-based authentication is implemented
 
 Two roles are supported:
 
@@ -194,8 +198,9 @@ Admin – can manage sweets and inventory
 
 Protected routes prevent unauthorized access
 
+Admin-only routes enforce role-based authorization
 
-# My AI Usage
+🤖 My AI Usage
 
 I used AI tools as part of my development workflow to improve efficiency, reduce repetitive work, and enhance code quality while retaining full responsibility for the final implementation.
 
@@ -206,12 +211,15 @@ ChatGPT
 How I Used AI
 
 Generating initial boilerplate code
+
 Debugging React state management and routing issues
+
 Improving UI/UX patterns and admin workflows
+
 Resolving Git and repository-related issues
 
 All AI-generated suggestions were reviewed, modified, and manually integrated.
-AI usage is transparently documented in Git commits using AI co-authorship.
+AI usage is transparently documented in Git commits using AI co-authorship, as required.
 
 
 # Screenshots
