@@ -1,8 +1,7 @@
 const jwt = require("jsonwebtoken");
 
-const SECRET = "secret123"; // same secret used in auth.js
+const SECRET = "secret123"; 
 
-// Verify token middleware
 function verifyToken(req, res, next) {
   const authHeader = req.headers.authorization;
 
@@ -10,7 +9,7 @@ function verifyToken(req, res, next) {
     return res.status(401).json({ error: "No token provided" });
   }
 
-  const token = authHeader.split(" ")[1]; // Bearer <token>
+  const token = authHeader.split(" ")[1]; 
 
   if (!token) {
     return res.status(401).json({ error: "Invalid token format" });
@@ -21,12 +20,11 @@ function verifyToken(req, res, next) {
       return res.status(401).json({ error: "Invalid or expired token" });
     }
 
-    req.user = decoded; // { id, role }
+    req.user = decoded;
     next();
   });
 }
 
-// Admin-only middleware
 function verifyAdmin(req, res, next) {
   if (req.user.role !== "admin") {
     return res.status(403).json({ error: "Admin access required" });

@@ -14,14 +14,11 @@ body {
   padding: 30px;
 }
 
-
-/* Headings */
 h1, h2, h3 {
   text-align: center;
   color: #f4f3f6;
 }
 
-/* Home grid: 3 per row */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -29,7 +26,6 @@ h1, h2, h3 {
   margin-top: 30px;
 }
 
-/* Responsive */
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);

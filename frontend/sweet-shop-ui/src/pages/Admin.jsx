@@ -12,14 +12,11 @@ function Admin() {
 
   const [sweets, setSweets] = useState([]);
 
-  /* ---------- SEARCH & FILTER ---------- */
   const [search, setSearch] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("");
 
-  /* ---------- RESTOCK ---------- */
   const [restockQty, setRestockQty] = useState({});
 
-  /* ---------- EDIT ---------- */
   const [editId, setEditId] = useState(null);
   const [editData, setEditData] = useState({
     name: "",
@@ -28,7 +25,6 @@ function Admin() {
     quantity: "",
   });
 
-  /* ---------- FETCH ---------- */
   const fetchSweets = async () => {
     const res = await api.get("/sweets");
     setSweets(res.data);
@@ -38,7 +34,6 @@ function Admin() {
     fetchSweets();
   }, []);
 
-  /* ---------- ADD SWEET ---------- */
   const handleAddSweet = async () => {
     if (!name || !category || !price || !quantity) {
       alert("All fields required");
@@ -60,7 +55,6 @@ function Admin() {
     fetchSweets();
   };
 
-  /* ---------- RESTOCK ---------- */
   const handleRestock = async (id) => {
     const qty = Number(restockQty[id]);
     if (!qty || qty <= 0) return;
@@ -70,14 +64,12 @@ function Admin() {
     fetchSweets();
   };
 
-  /* ---------- DELETE ---------- */
   const handleDelete = async (id) => {
     if (!window.confirm("Delete this sweet?")) return;
     await api.delete(`/sweets/${id}`);
     fetchSweets();
   };
 
-  /* ---------- EDIT ---------- */
   const startEdit = (s) => {
     setShowAddForm(false);
     setEditId(s.id);
@@ -99,7 +91,6 @@ function Admin() {
     fetchSweets();
   };
 
-  /* ---------- FILTER LOGIC ---------- */
   const categories = [...new Set(sweets.map((s) => s.category))];
 
   const filteredSweets = sweets.filter((s) => {
@@ -115,7 +106,6 @@ function Admin() {
 
   return (
     <>
-      {/* ---------- NAVBAR ---------- */}
       <Navbar
         search={search}
         setSearch={setSearch}
@@ -125,10 +115,7 @@ function Admin() {
       />
 
       <div className="admin-container">
-        <h2>Admin Panel</h2>
-
-        {/* ---------- ADD SWEET ---------- */}
-        
+        <h2>Admin Panel</h2>        
         <button
           className="add-toggle-btn"
           disabled={editId !== null}
@@ -171,7 +158,6 @@ function Admin() {
           </div>
         )}
 
-        {/* ---------- TABLE ---------- */}
         <h3>Existing Sweets</h3>
 
         <table className="admin-table">

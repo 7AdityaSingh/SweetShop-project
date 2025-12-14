@@ -5,22 +5,15 @@ import SweetCard from "../components/SweetCard";
 import "../styles/App.css";
 
 function Home() {
-  /* ---------- SWEETS ---------- */
   const [sweets, setSweets] = useState([]);
-
-  /* ---------- SEARCH & FILTER ---------- */
   const [search, setSearch] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("");
 
-  /* ---------- FETCH ---------- */
   useEffect(() => {
     api.get("/sweets").then((res) => setSweets(res.data));
   }, []);
 
-  /* ---------- CATEGORY LIST ---------- */
   const categories = [...new Set(sweets.map((s) => s.category))];
-
-  /* ---------- FILTER LOGIC ---------- */
   const filteredSweets = sweets.filter((s) => {
     const matchSearch = s.name
       .toLowerCase()
@@ -34,7 +27,6 @@ function Home() {
 
   return (
     <>
-      {/* ---------- NAVBAR ---------- */}
       <Navbar
         search={search}
         setSearch={setSearch}

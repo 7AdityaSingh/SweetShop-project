@@ -1,6 +1,5 @@
 const sqlite3 = require("sqlite3").verbose();
 
-// Create or open database file
 const db = new sqlite3.Database("./shop.db", (err) => {
   if (err) {
     console.error("❌ Failed to connect to database", err);
@@ -9,7 +8,6 @@ const db = new sqlite3.Database("./shop.db", (err) => {
   }
 });
 
-// Create tables
 db.serialize(() => {
   db.run(`
     CREATE TABLE IF NOT EXISTS users (

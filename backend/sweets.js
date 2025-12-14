@@ -8,9 +8,6 @@ const {
 
 const router = express.Router();
 
-/* =========================
-   GET ALL SWEETS (PUBLIC)
-   ========================= */
 router.get("/", (req, res) => {
   db.all("SELECT * FROM sweets", [], (err, rows) => {
     if (err) {
@@ -20,9 +17,7 @@ router.get("/", (req, res) => {
   });
 });
 
-/* =========================
-   ADD SWEET (ADMIN ONLY)
-   ========================= */
+
 router.post("/", verifyToken, verifyAdmin, (req, res) => {
   const { name, category, price, quantity } = req.body;
 
@@ -45,9 +40,7 @@ router.post("/", verifyToken, verifyAdmin, (req, res) => {
   );
 });
 
-/* =========================
-   UPDATE SWEET (ADMIN ONLY)
-   ========================= */
+
 router.put("/:id", verifyToken, verifyAdmin, (req, res) => {
   const { name, category, price, quantity } = req.body;
   const id = req.params.id;
@@ -69,9 +62,7 @@ router.put("/:id", verifyToken, verifyAdmin, (req, res) => {
   );
 });
 
-/* =========================
-   DELETE SWEET (ADMIN ONLY)
-   ========================= */
+
 router.delete("/:id", verifyToken, verifyAdmin, (req, res) => {
   const id = req.params.id;
 
@@ -92,9 +83,7 @@ router.delete("/:id", verifyToken, verifyAdmin, (req, res) => {
   );
 });
 
-/* =========================
-   RESTOCK SWEET (ADMIN ONLY)
-   ========================= */
+
 router.post("/:id/restock", verifyToken, verifyAdmin, (req, res) => {
   const sweetId = req.params.id;
   const { quantity } = req.body;
@@ -120,9 +109,6 @@ router.post("/:id/restock", verifyToken, verifyAdmin, (req, res) => {
   );
 });
 
-/* =========================
-   PURCHASE SWEET (LOGIN REQUIRED)
-   ========================= */
 router.post("/:id/purchase", verifyToken, (req, res) => {
   const sweetId = req.params.id;
   const { quantity } = req.body;
@@ -131,7 +117,6 @@ router.post("/:id/purchase", verifyToken, (req, res) => {
     return res.status(400).json({ error: "Invalid quantity" });
   }
 
-  // Step 1: Check available stock
   db.get(
     "SELECT quantity FROM sweets WHERE id = ?",
     [sweetId],
@@ -146,7 +131,6 @@ router.post("/:id/purchase", verifyToken, (req, res) => {
           .json({ error: "Not enough stock available" });
       }
 
-      // Step 2: Reduce stock
       db.run(
         "UPDATE sweets SET quantity = quantity - ? WHERE id = ?",
         [quantity, sweetId],
